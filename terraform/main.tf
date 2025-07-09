@@ -2,6 +2,10 @@ provider "aws" {
   region = "us-east-2"
 }
 
+terraform {
+  backend "s3" {}
+}
+
 ##############################
 # VPC (Shared across modules)
 ##############################
@@ -11,7 +15,7 @@ resource "aws_vpc" "main" {
   enable_dns_hostnames = true
 
   tags = {
-    Name = "video-edit-vpc"
+    Name = "CI/CD-Infra"
   }
 }
 
