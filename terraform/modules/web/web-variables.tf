@@ -1,5 +1,5 @@
 variable "vpc_id" {
-  description = "CICD_Infra"
+  description = "The ID of the VPC"
   type        = string
 }
 
@@ -24,6 +24,35 @@ variable "az_b" {
 }
 
 variable "env" {
-  description = "dev"
+  description = "Environment name (e.g., dev, prod)"
   type        = string
+}
+
+variable "ami_id" {
+  description = "AMI ID to use in the Launch Template"
+  type        = string
+}
+
+variable "instance_type" {
+  description = "EC2 instance type for ASG"
+  type        = string
+  default     = "t3.micro"
+}
+
+variable "min_size" {
+  description = "Minimum number of EC2 instances in ASG"
+  type        = number
+  default     = 1
+}
+
+variable "max_size" {
+  description = "Maximum number of EC2 instances in ASG"
+  type        = number
+  default     = 2
+}
+
+variable "desired_capacity" {
+  description = "Desired number of EC2 instances in ASG"
+  type        = number
+  default     = 1
 }

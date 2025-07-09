@@ -4,8 +4,13 @@ output "web_subnet_ids" {
 }
 
 output "web_igw_id" {
-  description = "ID of Internet Gateway"
+  description = "ID of the Internet Gateway"
   value       = aws_internet_gateway.web_igw.id
+}
+
+output "nat_gateway_id" {
+  description = "ID of the NAT Gateway (for app/db tier access to internet)"
+  value       = aws_nat_gateway.web_nat.id
 }
 
 output "alb_dns_name" {
@@ -14,16 +19,16 @@ output "alb_dns_name" {
 }
 
 output "alb_sg_id" {
-  description = "Security Group ID for ALB"
+  description = "Security Group ID used by the ALB"
   value       = aws_security_group.alb_sg.id
 }
 
 output "alb_target_group_arn" {
-  description = "Target group ARN for use in ASG later"
+  description = "Target group ARN for use in ASG"
   value       = aws_lb_target_group.web_tg.arn
 }
 
-output "nat_gateway_id" {
-  value       = aws_nat_gateway.web_nat.id
-  description = "NAT Gateway ID for private tier use"
+output "web_asg_name" {
+  description = "Name of the Auto Scaling Group for the web tier"
+  value       = aws_autoscaling_group.web_asg.name
 }
