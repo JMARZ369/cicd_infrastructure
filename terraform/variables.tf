@@ -11,7 +11,7 @@ variable "ami_id" {
 variable "instance_type" {
   description = "EC2 instance type"
   type        = string
-  default     = "t3.micro"
+  default     = "t2.micro"
 }
 
 variable "min_size" {
@@ -89,35 +89,35 @@ variable "az_b" {
 variable "web_subnet_cidr_a" {
   description = "CIDR block for Web Subnet A"
   type        = string
-  default     = "192.168.11.0/24"
+  default     = "192.168.1.0/24"
 }
 
 variable "web_subnet_cidr_b" {
   description = "CIDR block for Web Subnet B"
   type        = string
-  default     = "192.168.12.0/24"
+  default     = "192.168.2.0/24"
 }
 
 variable "app_subnet_cidr_a" {
   description = "CIDR block for App Subnet A"
   type        = string
-  default     = "192.168.21.0/24"
+  default     = "192.168.3.0/24"
 }
 
 variable "app_subnet_cidr_b" {
   description = "CIDR block for App Subnet B"
   type        = string
-  default     = "192.168.22.0/24"
+  default     = "192.168.4.0/24"
 }
 
 variable "db_subnet_cidr_a" {
   description = "CIDR block for DB Subnet A"
   type        = string
-  default     = "192.168.31.0/24"
+  default     = "192.168.5.0/24"
 }
 
 variable "db_subnet_cidr_b" {
   description = "CIDR block for DB Subnet B"
   type        = string
-  default     = "192.168.32.0/24"
+  default     = "192.168.6.0/24"
 }
